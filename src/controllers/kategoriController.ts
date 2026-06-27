@@ -1,17 +1,5 @@
-import type {
-  Request,
-  Response,
-  NextFunction
-} from 'express';
-
-import {
-  asc,
-  desc,
-  count,
-  eq,
-  like
-} from 'drizzle-orm';
-
+import type {Request,Response,NextFunction} from 'express';
+import {asc,desc,count,eq,like} from 'drizzle-orm';
 import { db } from '../db/index.js';
 import { kategoriBuku } from '../db/schema.js';
 
@@ -56,15 +44,11 @@ export async function getAllKategori(
   try {
 
     const page = Number(req.query.page ?? 1);
-
     const limit = Number(req.query.limit ?? 10);
-
     const keyword = String(req.query.q ?? '');
-
     const sortDir = String(
       req.query.sortDir ?? 'asc'
     ).toLowerCase();
-
     const conditions = keyword
       ? like(
           kategoriBuku.namaKategori,

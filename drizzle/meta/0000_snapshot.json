@@ -1,0 +1,187 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "43b95631-07fd-4074-9f14-1c1f33d19d82",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "buku": {
+      "name": "buku",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "judul": {
+          "name": "judul",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "penulis": {
+          "name": "penulis",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "penerbit": {
+          "name": "penerbit",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tahun_terbit": {
+          "name": "tahun_terbit",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "stok": {
+          "name": "stok",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_kategori": {
+          "name": "id_kategori",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_rak": {
+          "name": "id_rak",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "buku_id_kategori_kategori_buku_id_fk": {
+          "name": "buku_id_kategori_kategori_buku_id_fk",
+          "tableFrom": "buku",
+          "tableTo": "kategori_buku",
+          "columnsFrom": [
+            "id_kategori"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "buku_id_rak_rak_id_fk": {
+          "name": "buku_id_rak_rak_id_fk",
+          "tableFrom": "buku",
+          "tableTo": "rak",
+          "columnsFrom": [
+            "id_rak"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "buku_id": {
+          "name": "buku_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "rak": {
+      "name": "rak",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "kode_rak": {
+          "name": "kode_rak",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "lokasi": {
+          "name": "lokasi",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "rak_id": {
+          "name": "rak_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "kategori_buku": {
+      "name": "kategori_buku",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nama_kategori": {
+          "name": "nama_kategori",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "kategori_buku_id": {
+          "name": "kategori_buku_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    }
+  },
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
+  }
+}
