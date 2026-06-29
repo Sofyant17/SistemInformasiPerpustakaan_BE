@@ -14,7 +14,7 @@ import {
 
 import { db } from '../db/index.js';
 import { buku } from '../db/buku.js';
-import { kategoriBuku } from '../db/kategoriBuku.js';
+import { kategoriBuku } from '../db/kategori.js';
 import { rak } from '../db/rak.js';
 
 // ======================================

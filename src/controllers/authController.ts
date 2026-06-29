@@ -1,12 +1,12 @@
-import type {Request, Response} From 'express';
+import type {Request, Response} from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { eq } from 'drizzle-orm';
-import { db } from '../index.js';
-import { users } from '../index.js';
+import { db } from '../db/index.js';
+import { users } from '../db/schema.js';
 const secret_key = 'rahasia_negara';
 
-interface jwtPayload{
+interface JwtPayload{
     id: number;
     email: string;
 }
